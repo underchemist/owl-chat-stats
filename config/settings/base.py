@@ -74,8 +74,10 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "owl_chat_stats.users.apps.UsersConfig",
-    # Your stuff: custom apps go here
+    "owl_chat_stats.downloader.apps.DownloaderConfig",
+    "owl_chat_stats.core.apps.CoreConfig",
 ]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -286,5 +288,5 @@ SOCIALACCOUNT_ADAPTER = "owl_chat_stats.users.adapters.SocialAccountAdapter"
 # https://django-compressor.readthedocs.io/en/latest/quickstart/#installation
 INSTALLED_APPS += ["compressor"]
 STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
-# Your stuff...
-# ------------------------------------------------------------------------------
+
+TWITCH_CLIENT_ID = "1j9usylq4goxjaqbo9byfs66zcm9cd"
