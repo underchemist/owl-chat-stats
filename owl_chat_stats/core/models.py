@@ -29,3 +29,9 @@ class Comment(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    _emote_endpoint = "https://static-cdn.jtvnw.net/emoticons/v1/{}/{}"
+
+    def get_twitch_emoticon_url(self, emoticon_id, size="1.0"):
+        """Fill in templated emote endpoint to generate emote url"""
+        return self._emote_endpoint.format(emoticon_id, size)
