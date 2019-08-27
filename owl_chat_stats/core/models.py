@@ -20,7 +20,7 @@ class Video(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
     data = JSONField()
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
