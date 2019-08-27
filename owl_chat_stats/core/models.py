@@ -12,6 +12,9 @@ class Match(models.Model):
     week = models.PositiveIntegerField()
     day = models.PositiveIntegerField()
 
+    def __str__(self):
+        return f"Overwatch League Season {self.season} | Stage {self.stage} Week {self.week} Day {self.day} | {TEAMS[self.team_one]} vs. {TEAMS[self.team_two]}"
+
 
 class Video(models.Model):
     data = JSONField()
