@@ -13,11 +13,11 @@ class Downloader:
         )
         self.channel = self.client.user("overwatchleague")
         self.videos = self.filter_by_full_matches(
-            self.get_channel_videos({"type": "highlight"})
+            self.get_channel_videos(type="highlight")
         )
 
-    def get_channel_videos(self, params):
-        return list(self.channel.videos(**params))
+    def get_channel_videos(self, **kwargs):
+        return list(self.channel.videos(**kwargs))
 
     @staticmethod
     def filter_by_full_matches(videos):
